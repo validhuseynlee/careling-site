@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Careling – Medical Interpreter Services | Healthcare Interpretation</title>
+<meta name="description" content="Professional onsite medical interpreters for hospitals, clinics, and healthcare providers. Careling ensures every patient voice is heard." />
+<meta name="keywords" content="medical interpreter services, healthcare interpretation services, onsite medical interpreter, hospital translation services, medical language services" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --purple: #5B3FA6;
+    --purple-dark: #3D2B78;
+    --purple-light: #7B5CC9;
+    --purple-soft: #EDE8FA;
+    --purple-mid: #C4B4F0;
+    --teal: #2BBFA8;
+    --teal-soft: #D9F5F1;
+    --white: #FFFFFF;
+    --off-white: #F8F7FC;
+    --text-dark: #1A1228;
+    --text-mid: #4A4260;
+    --text-light: #8B82A8;
+    --border: #E4DFEE;
+    --shadow: 0 4px 32px rgba(91,63,166,0.10);
+    --shadow-card: 0 2px 20px rgba(91,63,166,0.08);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: 'Fraunces', serif; line-height: 1.2; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700;
+    color: var(--purple-dark); text-decoration: none;
+  }
+  .nav-logo svg { width: 36px; height: 36px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a {
+    font-size: 0.9rem; font-weight: 500; color: var(--text-mid);
+    text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--purple); }
+  .nav-cta {
+    background: var(--purple); color: #fff;
+    padding: 10px 22px; border-radius: 8px; font-size: 0.88rem;
+    font-weight: 600; text-decoration: none; transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--purple-dark); color: #fff; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 5% 80px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center;
+    background: linear-gradient(135deg, #F8F7FC 0%, #EDE8FA 60%, #ddd5f7 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(91,63,166,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: 10%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(43,191,168,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--white); border: 1px solid var(--purple-mid);
+    border-radius: 100px; padding: 6px 14px;
+    font-size: 0.78rem; font-weight: 600; color: var(--purple);
+    letter-spacing: .04em; text-transform: uppercase; margin-bottom: 22px;
+  }
+  .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); display: block; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 700;
+    color: var(--purple-dark); margin-bottom: 20px; max-width: 560px;
+  }
+  .hero h1 em { font-style: italic; color: var(--purple-light); }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--text-mid); max-width: 480px;
+    margin-bottom: 36px; font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--purple); color: #fff; border: none;
+    padding: 14px 28px; border-radius: 10px; font-size: 0.95rem;
+    font-weight: 600; cursor: pointer; text-decoration: none;
+    transition: background .2s, transform .15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--purple-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--purple);
+    border: 2px solid var(--purple); padding: 14px 28px;
+    border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; text-decoration: none; transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover { background: var(--purple-soft); }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px;
+    padding-top: 32px; border-top: 1px solid var(--border);
+  }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: var(--purple-dark); }
+  .stat-label { font-size: 0.8rem; color: var(--text-light); font-weight: 500; }
+
+  /* HERO VISUAL */
+  .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+  .hero-card-main {
+    background: var(--white);
+    border-radius: 20px; padding: 32px;
+    box-shadow: var(--shadow);
+    width: 100%; max-width: 400px;
+    position: relative; z-index: 2;
+  }
+  .card-header-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+  }
+  .card-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.3rem;
+  }
+  .card-name { font-weight: 600; font-size: 0.95rem; color: var(--text-dark); }
+  .card-role { font-size: 0.78rem; color: var(--text-light); }
+  .card-badge {
+    margin-left: auto; background: var(--teal-soft);
+    color: #1a8a77; font-size: 0.75rem; font-weight: 600;
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .card-langs {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;
+  }
+  .lang-tag {
+    background: var(--purple-soft); color: var(--purple);
+    font-size: 0.75rem; font-weight: 600; padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .card-divider { height: 1px; background: var(--border); margin: 16px 0; }
+  .card-detail-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .card-detail-label { font-size: 0.8rem; color: var(--text-light); }
+  .card-detail-val { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+  .card-action-btn {
+    width: 100%; background: var(--purple); color: #fff;
+    border: none; border-radius: 10px; padding: 12px;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    margin-top: 16px; font-family: 'DM Sans', sans-serif;
+  }
+  .floating-chip {
+    position: absolute; background: var(--white);
+    border-radius: 12px; padding: 12px 16px;
+    box-shadow: var(--shadow-card);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.82rem; font-weight: 600; color: var(--text-dark);
+    animation: float 3s ease-in-out infinite;
+  }
+  .chip-icon { font-size: 1.2rem; }
+  .chip-sub { font-size: 0.72rem; color: var(--text-light); font-weight: 400; }
+  .chip-1 { top: -20px; left: -30px; animation-delay: 0s; }
+  .chip-2 { bottom: -20px; right: -20px; animation-delay: 1.5s; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* SECTION WRAPPER */
+  section { padding: 96px 5%; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--purple); margin-bottom: 12px;
+  }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--purple-dark); max-width: 600px; margin-bottom: 16px; }
+  .section-sub { font-size: 1rem; color: var(--text-mid); max-width: 560px; font-weight: 300; margin-bottom: 48px; }
+
+  /* LOGOS */
+  .logos-section {
+    padding: 40px 5%; background: var(--off-white);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .logos-label { text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--text-light); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 28px; }
+  .logos-row { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+  .logo-item { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600; color: var(--text-light); opacity: 0.7; }
+
+  /* SERVICES */
+  .services-section { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 18px; padding: 36px 28px; transition: box-shadow .25s, transform .25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--teal));
+    opacity: 0; transition: opacity .25s;
+  }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--purple-soft), #ddd5f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin-bottom: 20px;
+  }
+  .service-badge {
+    display: inline-block; background: var(--purple); color: #fff;
+    font-size: 0.65rem; font-weight: 700; padding: 3px 8px;
+    border-radius: 4px; text-transform: uppercase; letter-spacing: .04em;
+    margin-bottom: 12px;
+  }
+  .service-card h3 { font-size: 1.15rem; color: var(--purple-dark); margin-bottom: 12px; }
+  .service-card p { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 18px; line-height: 1.7; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: var(--white); border: 1px solid var(--border);
+    font-size: 0.72rem; padding: 3px 8px; border-radius: 5px;
+    color: var(--text-mid); font-weight: 500;
+  }
+
+  /* HOW IT WORKS */
+  .how-section { background: var(--purple-dark); color: #fff; }
+  .how-section .section-label { color: var(--purple-mid); }
+  .how-section .section-title { color: #fff; }
+  .how-section .section-sub { color: rgba(255,255,255,0.65); }
+  .steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; position: relative; }
+  .steps-row::before {
+    content: ''; position: absolute; top: 28px; left: 10%; right: 10%;
+    height: 1px; background: rgba(255,255,255,0.15);
+  }
+  .step-item { text-align: center; position: relative; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+    font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--purple-mid);
+    position: relative; z-index: 1;
+  }
+  .step-item h4 { font-size: 1rem; color: #fff; margin-bottom: 8px; }
+  .step-item p { font-size: 0.83rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* PROVIDERS */
+  .providers-section { background: var(--off-white); }
+  .providers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .benefit-item { display: flex; gap: 16px; align-items: flex-start; }
+  .benefit-icon {
+    width: 44px; height: 44px; min-width: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: white;
+  }
+  .benefit-text h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+  .benefit-text p { font-size: 0.83rem; color: var(--text-mid); }
+  .providers-img {
+    background: linear-gradient(135deg, var(--purple-soft), #ddd5f7);
+    border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 16px;
+  }
+  .mini-card {
+    background: var(--white); border-radius: 14px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: var(--shadow-card);
+  }
+  .mini-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--purple-soft); display: flex;
+    align-items: center; justify-content: center; font-size: 1.1rem; min-width: 40px;
+  }
+  .mini-title { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+  .mini-sub { font-size: 0.75rem; color: var(--text-light); }
+  .mini-right { margin-left: auto; font-size: 0.78rem; font-weight: 700; color: var(--teal); }
+
+  /* INTERPRETERS */
+  .interpreters-section { background: var(--white); }
+  .interp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .interp-cta {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    border-radius: 20px; padding: 40px; color: #fff;
+  }
+  .interp-cta h3 { font-size: 1.6rem; margin-bottom: 12px; }
+  .interp-cta p { font-size: 0.9rem; opacity: .8; margin-bottom: 24px; }
+  .perks-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .perk { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+  .perk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); min-width: 8px; }
+  .btn-white {
+    background: #fff; color: var(--purple); border: none;
+    padding: 13px 26px; border-radius: 10px; font-size: 0.9rem;
+    font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    text-decoration: none; display: inline-block;
+  }
+
+  /* ABOUT */
+  .about-section { background: var(--off-white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .mission-box {
+    background: linear-gradient(135deg, var(--purple-soft), #ede0ff);
+    border-radius: 20px; padding: 40px; text-align: center;
+  }
+  .mission-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .mission-quote {
+    font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700;
+    color: var(--purple-dark); font-style: italic; margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .mission-sub { font-size: 0.88rem; color: var(--text-mid); }
+  .diff-list { display: flex; flex-direction: column; gap: 18px; }
+  .diff-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 18px; background: var(--white); border-radius: 14px;
+    border: 1px solid var(--border);
+  }
+  .diff-num {
+    font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
+    color: var(--purple-mid); min-width: 32px;
+  }
+  .diff-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+  .diff-item p { font-size: 0.82rem; color: var(--text-mid); }
+
+  /* CUSTOMERS */
+  .customers-section { background: var(--white); }
+  .customers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .customer-card {
+    border: 1px solid var(--border); border-radius: 14px; padding: 28px 24px;
+    text-align: center; transition: all .2s;
+  }
+  .customer-card:hover { border-color: var(--purple-mid); background: var(--purple-soft); }
+  .customer-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .customer-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); }
+
+  /* CTA BANNER */
+  .cta-section {
+    background: linear-gradient(135deg, var(--purple-dark) 0%, #2d1b69 100%);
+    padding: 96px 5%; text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(43,191,168,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section h2 { font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; margin-bottom: 16px; }
+  .cta-section p { font-size: 1.05rem; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 36px; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-teal {
+    background: var(--teal); color: #fff; border: none;
+    padding: 14px 28px; border-radius: 10px; font-size: 0.95rem;
+    font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    text-decoration: none; transition: background .2s;
+  }
+  .btn-teal:hover { background: #22a892; }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark); color: rgba(255,255,255,0.7);
+    padding: 60px 5% 32px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand-name { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+  .footer-brand-tag { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; line-height: 1.6; }
+  .footer-mission { font-size: 0.8rem; color: var(--purple-mid); font-style: italic; font-family: 'Fraunces', serif; }
+  .footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 10px; transition: color .2s; }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 120px 5% 60px; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-row { grid-template-columns: 1fr 1fr; }
+    .steps-row::before { display: none; }
+    .providers-grid, .interp-grid, .about-grid { grid-template-columns: 1fr; }
+    .customers-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .customers-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .steps-row { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="10" fill="#5B3FA6"/>
+      <path d="M10 18C10 13.58 13.58 10 18 10C22.42 10 26 13.58 26 18" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="18" cy="22" r="4" fill="white" opacity=".9"/>
+      <path d="M14 18 Q14 26 18 26 Q22 26 22 18" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".55"/>
+    </svg>
+    Careling
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#providers">For Providers</a>
+    <a href="#interpreters">For Interpreters</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Request Interpreter</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-eyebrow"><span></span> Healthcare Interpretation Services</div>
+    <h1>Medical Interpreters When <em>Healthcare Communication</em> Matters</h1>
+    <p class="hero-sub">Professional onsite interpreters with medical expertise for hospitals and healthcare providers. Because every patient deserves to be understood.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request Interpreter</a>
+      <a href="#contact" class="btn-outline">Book a Demo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Medical Interpreters</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Languages Covered</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">Availability</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-main">
+      <div class="card-header-row">
+        <div class="card-avatar">👩‍⚕️</div>
+        <div>
+          <div class="card-name">Dr. Emily Torres</div>
+          <div class="card-role">Memorial General Hospital</div>
+        </div>
+        <div class="card-badge">● Live</div>
+      </div>
+      <div class="card-langs">
+        <span class="lang-tag">🇺🇸 English</span>
+        <span class="lang-tag">🇪🇸 Spanish</span>
+        <span class="lang-tag">🇹🇷 Turkish</span>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-detail-row">
+        <span class="card-detail-label">Interpreter</span>
+        <span class="card-detail-val">Maria Gonzalez</span>
+      </div>
+      <div class="card-detail-row">
+        <span class="card-detail-label">Specialization</span>
+        <span class="card-detail-val">Cardiology · ICU</span>
+      </div>
+      <div class="card-detail-row">
+        <span class="card-detail-label">Type</span>
+        <span class="card-detail-val">Onsite · Certified</span>
+      </div>
+      <div class="card-detail-row">
+        <span class="card-detail-label">ETA</span>
+        <span class="card-detail-val" style="color: var(--teal);">25 min</span>
+      </div>
+      <button class="card-action-btn">Confirm Interpreter</button>
+    </div>
+    <div class="floating-chip chip-1">
+      <span class="chip-icon">🏥</span>
+      <div>
+        <div>Onsite Confirmed</div>
+        <div class="chip-sub">Patient intake — Room 204</div>
+      </div>
+    </div>
+    <div class="floating-chip chip-2">
+      <span class="chip-icon">✅</span>
+      <div>
+        <div>Medically Trained</div>
+        <div class="chip-sub">Healthcare background verified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<div class="logos-section">
+  <div class="logos-label">Trusted by leading healthcare organizations</div>
+  <div class="logos-row">
+    <span class="logo-item">Memorial Health</span>
+    <span class="logo-item">Unity Clinics</span>
+    <span class="logo-item">Brightside Hospital</span>
+    <span class="logo-item">CareFirst Rehab</span>
+    <span class="logo-item">Horizon Telehealth</span>
+    <span class="logo-item">City Public Health</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section fade-up" id="services">
+  <div class="section-label">Our Services</div>
+  <h2 class="section-title">Three Ways Careling Bridges the Communication Gap</h2>
+  <p class="section-sub">From scheduled appointments to urgent consultations — we deliver medically qualified interpreters exactly when and how you need them.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏥</div>
+      <span class="service-badge">Primary Service</span>
+      <h3>Onsite Medical Interpreters</h3>
+      <p>A professional interpreter physically attends medical appointments, trained in medical terminology and patient communication for the most critical conversations.</p>
+      <div class="service-tags">
+        <span class="tag">Doctor Visits</span>
+        <span class="tag">Hospital Consultations</span>
+        <span class="tag">Surgery Prep</span>
+        <span class="tag">Emergency</span>
+        <span class="tag">Discharge Instructions</span>
+        <span class="tag">Long-term Care</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📅</div>
+      <span class="service-badge" style="background: var(--teal);">Scheduled</span>
+      <h3>Scheduled Interpretation</h3>
+      <p>Book interpreters in advance for planned procedures. Ensures continuity of care for patients requiring ongoing communication support across multiple visits.</p>
+      <div class="service-tags">
+        <span class="tag">Specialist Visits</span>
+        <span class="tag">Therapy Sessions</span>
+        <span class="tag">Multi-day Treatments</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <span class="service-badge" style="background: #6B7280;">Remote Support</span>
+      <h3>Remote Interpretation</h3>
+      <p>Video or phone interpretation when onsite presence isn't possible. A flexible option that ensures no patient is left without language support, anywhere.</p>
+      <div class="service-tags">
+        <span class="tag">Video Call</span>
+        <span class="tag">Phone</span>
+        <span class="tag">Telehealth</span>
+        <span class="tag">Follow-up Calls</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section fade-up">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title" style="max-width:none; text-align:center;">From Request to Bedside in Minutes</h2>
+  <p class="section-sub" style="margin: 0 auto 56px; text-align:center;">Our streamlined platform connects healthcare providers with the right interpreter fast.</p>
+  <div class="steps-row">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <h4>Submit Request</h4>
+      <p>Healthcare provider submits a request specifying language, specialty, and timing.</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <h4>Match Interpreter</h4>
+      <p>Careling matches the right medically trained interpreter for the specific need.</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <h4>Confirm & Dispatch</h4>
+      <p>Interpreter is confirmed and dispatched onsite or connected remotely.</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <h4>Clear Communication</h4>
+      <p>Patient and provider communicate accurately, improving care outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR PROVIDERS -->
+<section class="providers-section fade-up" id="providers">
+  <div class="providers-grid">
+    <div>
+      <div class="section-label">For Healthcare Providers</div>
+      <h2 class="section-title">Reduce Language Barriers. Improve Patient Safety.</h2>
+      <p class="section-sub">Careling gives your organization the language tools to deliver equitable, high-quality care to every patient — regardless of their language.</p>
+      <ul class="benefits-list">
+        <li class="benefit-item">
+          <div class="benefit-icon">🩺</div>
+          <div class="benefit-text">
+            <h4>Medically Trained Interpreters</h4>
+            <p>Interpreters with real healthcare backgrounds accurately translate complex medical terminology, not just words.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-text">
+            <h4>Reduce Medical Errors</h4>
+            <p>Clear communication prevents misdiagnosis, medication errors, and critical misunderstandings at critical moments.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">🌐</div>
+          <div class="benefit-text">
+            <h4>Culturally Sensitive Communication</h4>
+            <p>Interpreters bridge cultural context, not just language, ensuring patients truly understand their care.</p>
+          </div>
+        </li>
+        <li class="benefit-item">
+          <div class="benefit-icon">⚖️</div>
+          <div class="benefit-text">
+            <h4>Healthcare Equity</h4>
+            <p>Ensure patients with limited English proficiency receive the same quality of care as any other patient.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="providers-img">
+      <div class="mini-card">
+        <div class="mini-icon">🏥</div>
+        <div>
+          <div class="mini-title">St. Luke's Hospital</div>
+          <div class="mini-sub">Active interpretation session</div>
+        </div>
+        <div class="mini-right">● Live</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-icon">📋</div>
+        <div>
+          <div class="mini-title">Discharge Instructions</div>
+          <div class="mini-sub">Spanish → English · Room 311</div>
+        </div>
+        <div class="mini-right">Confirmed</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-icon">🧠</div>
+        <div>
+          <div class="mini-title">Neurology Consult</div>
+          <div class="mini-sub">Arabic → English · Tomorrow 10 AM</div>
+        </div>
+        <div class="mini-right">Scheduled</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-icon">💊</div>
+        <div>
+          <div class="mini-title">Medication Review</div>
+          <div class="mini-sub">Mandarin → English · ICU</div>
+        </div>
+        <div class="mini-right">In Progress</div>
+      </div>
+      <div style="text-align:center; padding: 8px 0;">
+        <a href="#contact" class="btn-primary" style="font-size: 0.88rem; padding: 12px 24px;">Request Interpreter Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR INTERPRETERS -->
+<section class="interpreters-section fade-up" id="interpreters">
+  <div class="interp-grid">
+    <div>
+      <div class="section-label">For Medical Interpreters</div>
+      <h2 class="section-title">Use Your Healthcare Knowledge to Help Patients.</h2>
+      <p class="section-sub">If you have a healthcare background and language skills, Careling wants to work with you. Join a network of trusted professionals making a real difference in patient care.</p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="diff-item">
+          <span style="font-size:1.2rem;">🎓</span>
+          <div>
+            <h4>Medical Knowledge Valued</h4>
+            <p style="font-size:0.83rem; color:var(--text-mid);">Your clinical background sets you apart. Careling works with interpreters who understand healthcare, not just language.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span style="font-size:1.2rem;">📅</span>
+          <div>
+            <h4>Flexible Scheduling</h4>
+            <p style="font-size:0.83rem; color:var(--text-mid);">Work onsite at hospitals and clinics on a schedule that fits your life.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span style="font-size:1.2rem;">🤝</span>
+          <div>
+            <h4>Meaningful Work</h4>
+            <p style="font-size:0.83rem; color:var(--text-mid);">Every interpretation is a chance to improve a patient's care experience and outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="interp-cta">
+      <h3>Join the Careling Network</h3>
+      <p>We're looking for bilingual professionals with healthcare experience — nurses, medical assistants, health educators, and more.</p>
+      <div class="perks-list">
+        <div class="perk"><div class="perk-dot"></div>Healthcare background preferred</div>
+        <div class="perk"><div class="perk-dot"></div>Onsite hospital & clinic assignments</div>
+        <div class="perk"><div class="perk-dot"></div>Competitive compensation</div>
+        <div class="perk"><div class="perk-dot"></div>Continuous professional support</div>
+        <div class="perk"><div class="perk-dot"></div>Make a difference every day</div>
+      </div>
+      <a href="#contact" class="btn-white">Apply as an Interpreter →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section fade-up" id="about">
+  <div class="about-grid">
+    <div class="mission-box">
+      <div class="mission-icon">💙</div>
+      <div class="mission-quote">"Every Voice Deserves Care."</div>
+      <p class="mission-sub">Careling was founded on the belief that language should never be a barrier to quality healthcare. We connect patients and providers through medically qualified human interpreters — because accurate communication saves lives.</p>
+    </div>
+    <div>
+      <div class="section-label">What Makes Us Different</div>
+      <h2 class="section-title">Built Exclusively for Healthcare</h2>
+      <p class="section-sub">Unlike generic translation services, Careling is designed from the ground up for the unique demands of medical communication.</p>
+      <div class="diff-list">
+        <div class="diff-item">
+          <span class="diff-num">01</span>
+          <div>
+            <h4>Onsite Interpreters with Healthcare Knowledge</h4>
+            <p>We work with interpreters who have real medical training or clinical backgrounds.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">02</span>
+          <div>
+            <h4>Healthcare-Focused Platform</h4>
+            <p>Our platform is built around the workflows, urgencies, and compliance needs of hospitals and clinics.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">03</span>
+          <div>
+            <h4>Trusted Professionals, Not Generic Translators</h4>
+            <p>Every interpreter is vetted, credentialed, and matched specifically to your specialty needs.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <span class="diff-num">04</span>
+          <div>
+            <h4>Designed for Hospitals & Clinics</h4>
+            <p>From emergency departments to long-term care facilities — Careling fits how healthcare really works.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS -->
+<section class="customers-section fade-up">
+  <div style="text-align:center; margin-bottom:48px;">
+    <div class="section-label" style="text-align:center;">Who We Serve</div>
+    <h2 class="section-title" style="max-width:none; margin:0 auto 12px;">Healthcare Organizations That Trust Careling</h2>
+  </div>
+  <div class="customers-grid">
+    <div class="customer-card"><div class="customer-icon">🏥</div><h4>Hospitals</h4></div>
+    <div class="customer-card"><div class="customer-icon">🏢</div><h4>Clinics</h4></div>
+    <div class="customer-card"><div class="customer-icon">🛏️</div><h4>Nursing Homes</h4></div>
+    <div class="customer-card"><div class="customer-icon">♿</div><h4>Rehabilitation Centers</h4></div>
+    <div class="customer-card"><div class="customer-icon">💻</div><h4>Telehealth Providers</h4></div>
+    <div class="customer-card"><div class="customer-icon">🏛️</div><h4>Public Health Organizations</h4></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section fade-up" id="contact">
+  <h2>Ready to Improve Patient Communication?</h2>
+  <p>Request a professional medical interpreter or book a demo to see how Careling works for your organization.</p>
+  <div class="cta-btns">
+    <a href="mailto:hello@careling.com" class="btn-teal">Request an Interpreter</a>
+    <a href="mailto:hello@careling.com" class="btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff;">Book a Demo</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Careling</div>
+      <div class="footer-brand-tag">Professional healthcare interpretation services. Onsite medical interpreters for hospitals, clinics, nursing homes, and healthcare providers nationwide.</div>
+      <div class="footer-mission">"Every Voice Deserves Care."</div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#services">Onsite Interpretation</a>
+      <a href="#services">Scheduled Interpretation</a>
+      <a href="#services">Remote Interpretation</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#about">About Careling</a>
+      <a href="#providers">For Providers</a>
+      <a href="#interpreters">For Interpreters</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:hello@careling.com">hello@careling.com</a>
+      <a href="#contact">Request Interpreter</a>
+      <a href="#contact">Book Demo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Careling. All rights reserved.</span>
+    <span>Medical Interpreter Services · Healthcare Interpretation · Onsite Medical Interpreter</span>
+  </div>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(91,63,166,0.12)' : 'none';
+  });
+</script>
+</body>
+</html>
